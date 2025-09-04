@@ -1,0 +1,150 @@
+:root{
+  --bg1:#0f1724; /* deep */
+  --bg2:#152232;
+  --glass: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.04);
+  --accent: #7bdff6;
+  --card-radius: 16px;
+  --gap: 12px;
+  --text: #e6eef6;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg1),var(--bg2));
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  padding:18px;
+}
+
+/* App container sized for mobile feel */
+.app{
+  width:100%;
+  max-width:420px;
+  min-height:calc(100vh - 36px);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+/* Top bar */
+.topbar .loc{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+.topbar button{
+  background:transparent;
+  border:0;
+  color:var(--text);
+  font-size:18px;
+  padding:8px;
+}
+.place{font-weight:600;font-size:18px}
+.localtime{font-size:12px;color:rgba(230,238,246,0.7)}
+
+/* glass card common */
+.glass{
+  background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius:var(--card-radius);
+  padding:14px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Current card */
+.current-card{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+  padding:18px;
+}
+.current-card .left{flex:1}
+.temp{font-size:56px;font-weight:700;line-height:1;color:var(--text)}
+.cond{font-size:16px;color:rgba(230,238,246,0.9);margin-top:6px}
+.small{margin-top:10px;font-size:13px;color:rgba(230,238,246,0.75);display:flex;gap:12px;flex-wrap:wrap}
+.icon{width:92px;height:92px;object-fit:contain}
+
+/* Search */
+.search{display:flex;gap:10px;align-items:center}
+.search input{
+  flex:1;padding:10px 12px;border-radius:10px;border:none;background:transparent;color:var(--text);
+  border:1px solid rgba(255,255,255,0.06);
+  outline:none;font-size:15px;
+}
+.search button{
+  padding:10px 14px;border-radius:10px;border:none;background:var(--accent);color:#042a2f;font-weight:600;
+  cursor:pointer;
+}
+
+/* Hourly scroller */
+.hourly .section-title,.daily .section-title,.tips .section-title{font-weight:600;margin-bottom:8px}
+.hourly-scroll{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:6px;
+  -webkit-overflow-scrolling:touch;
+}
+.hour-item{
+  min-width:72px;
+  padding:8px;
+  text-align:center;
+  border-radius:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+}
+.hour-item .h-time{font-size:12px;color:rgba(230,238,246,0.75)}
+.hour-item img{width:36px;height:36px}
+.hour-item .h-temp{font-weight:600;margin-top:4px}
+
+/* Daily list */
+.daily-list{display:flex;flex-direction:column;gap:8px}
+.day-row{
+  display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:12px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.03);
+}
+.day-left{display:flex;align-items:center;gap:12px}
+.day-left img{width:36px;height:36px}
+.day-name{font-weight:600}
+.day-temp{font-weight:700}
+
+/* Details grid */
+.details{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+}
+.detail{padding:12px;border-radius:12px;text-align:center;background:var(--glass-2)}
+.d-title{font-size:12px;color:rgba(230,238,246,0.75)}
+.d-value{font-size:16px;font-weight:700;margin-top:6px}
+
+/* Sun card */
+.sun{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.s-title{font-size:12px;color:rgba(230,238,246,0.75)}
+.s-value{font-weight:700;font-size:16px}
+
+/* Tips */
+.tips-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.tip{background:rgba(255,255,255,0.02);padding:8px 10px;border-radius:10px;font-size:13px;color:rgba(230,238,246,0.9)}
+
+/* Footer */
+.footer{text-align:center;color:rgba(230,238,246,0.5);font-size:12px;padding:6px}
+
+/* Small screens adjustments */
+@media (max-width:420px){
+  .temp{font-size:48px}
+  .icon{width:72px;height:72px}
+  .hour-item{min-width:64px}
+}

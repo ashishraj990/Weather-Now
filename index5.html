@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Weather Now</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="loc">
+        <button id="locBtn" title="Use current location">📍</button>
+        <div>
+          <div id="place" class="place">—</div>
+          <div id="localtime" class="localtime"></div>
+        </div>
+        <button id="refreshBtn" title="Refresh">⟳</button>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- Current card -->
+      <section class="current-card glass">
+        <div class="left">
+          <div id="temp" class="temp">—°</div>
+          <div id="cond" class="cond">—</div>
+          <div class="small">
+            <span id="feelslike">Feels: —°</span>
+            <span id="aqi" class="aqi">AQI: —</span>
+          </div>
+        </div>
+        <div class="right">
+          <img id="curIcon" class="icon" src="" alt="" />
+        </div>
+      </section>
+
+      <!-- Search -->
+      <form id="searchForm" class="search glass">
+        <input id="searchInput" type="search" placeholder="Enter city or postcode" aria-label="location" />
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Hourly scroller -->
+      <section class="hourly glass">
+        <div class="section-title">Hourly</div>
+        <div id="hourlyScroll" class="hourly-scroll"></div>
+      </section>
+
+      <!-- 7 day forecast -->
+      <section class="daily glass">
+        <div class="section-title">7-day</div>
+        <div id="dailyList" class="daily-list"></div>
+      </section>
+
+      <!-- Details grid -->
+      <section class="details glass">
+        <div class="detail" title="Humidity">
+          <div class="d-title">Humidity</div>
+          <div id="humidity" class="d-value">—%</div>
+        </div>
+        <div class="detail" title="Wind">
+          <div class="d-title">Wind</div>
+          <div id="wind" class="d-value">— kph</div>
+        </div>
+        <div class="detail" title="Precipitation">
+          <div class="d-title">Precip</div>
+          <div id="precip" class="d-value">— mm</div>
+        </div>
+        <div class="detail" title="UV">
+          <div class="d-title">UV</div>
+          <div id="uv" class="d-value">—</div>
+        </div>
+        <div class="detail" title="Visibility">
+          <div class="d-title">Visibility</div>
+          <div id="vis" class="d-value">— km</div>
+        </div>
+        <div class="detail" title="Pressure">
+          <div class="d-title">Pressure</div>
+          <div id="pressure" class="d-value">— mb</div>
+        </div>
+      </section>
+
+      <!-- Sunrise / Sunset -->
+      <section class="sun glass">
+        <div class="sun-left">
+          <div class="s-title">Sunrise</div>
+          <div id="sunrise" class="s-value">—</div>
+        </div>
+        <div class="sun-right">
+          <div class="s-title">Sunset</div>
+          <div id="sunset" class="s-value">—</div>
+        </div>
+      </section>
+
+      <!-- Tips -->
+      <section class="tips glass">
+        <div class="section-title">Lifestyle tips</div>
+        <div id="tipsList" class="tips-list"></div>
+      </section>
+    </main>
+
+    <footer class="footer">Powered by WeatherAPI</footer>
+  </div>
+
+  <script src="app2.js"></script>
+</body>
+</html>
